@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django import forms
 from backend.api.preprocessing import preprocessing
 from backend.api.predict import execute
-
+import time
 import sys
 import numpy
 numpy.set_printoptions(threshold=sys.maxsize)
@@ -19,7 +19,8 @@ def input(request):
         if answer.is_valid():
             answer = answer.cleaned_data['answer']
 
-        # processing of answer    
+        # processing of answer 
+        start_time = time.time()   
         preprocessed_answer= preprocessing(answer,isTest=True)
         #print(preprocessed_answer)
 
@@ -46,7 +47,7 @@ def input(request):
         ################################################################################
 
 
-
+        print("Total Time taken for all three models",time.time()-start_time)
         return render(request,"Result.html",{'vectoranswer':preprocessed_answer,'prediction':marks})
     return render(request,"form.html")
 
