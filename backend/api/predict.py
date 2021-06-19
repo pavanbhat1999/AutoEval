@@ -65,7 +65,7 @@ class dummy_model:
 #############################  driver code############################## 
 def execute(answer):
 
-    
+    #pointer@raghu  answer vector which is to be predicted 
     y_pred = answer
     
     # Real model which should return marks
