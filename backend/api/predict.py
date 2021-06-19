@@ -16,6 +16,11 @@ class Model:
         
         return("#################   Marks given by Composite should Display#################################")
 
+
+
+
+
+###############################   dummy model not to be used######################### 
 class dummy_model:
     def __init__(self):
         pass
@@ -55,11 +60,15 @@ class dummy_model:
     def predict(self,answer):
         
         return("sad")
+##############################  dummy model end############################## 
+
+#############################  driver code############################## 
 def execute(answer):
 
     
     y_pred = answer
     
+    # Real model which should return marks
     # model = Model()
     # prediction = model.predict(y_pred)
     # 
@@ -71,7 +80,7 @@ def execute(answer):
     # 
     # 
     # 
-    #   
+    #  jsut a dummy model for testing and returning 
     model = dummy_model()
     model.training()
     prediction = model.predict(y_pred)  

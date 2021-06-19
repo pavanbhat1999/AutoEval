@@ -19,7 +19,10 @@ def input(request):
         if answer.is_valid():
             answer = answer.cleaned_data['answer']
 
-        # processing of answer 
+        # processing of answer 3 methods 
+        #1 preprocessing_bow
+        #2 preprocessing_bow_features
+        #3 preprocessing  ( only using features )
         start_time = time.time()   
         preprocessed_answer= preprocessing(answer,isTest=True)
         #print(preprocessed_answer)
